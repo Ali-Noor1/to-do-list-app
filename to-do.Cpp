@@ -111,3 +111,22 @@ void markTaskDone(vector<Task>& tasks) {
         cout << "Invalid task number.\n";
     }
 }
+
+// Function to delete a task
+void deleteTask(vector<Task>& tasks) {
+    if (tasks.empty()) {
+        cout << "No tasks to delete.\n";
+        return;
+    }
+
+    int taskNumber;
+    viewTasks(tasks);
+    cout << "Enter task number to delete: ";
+    cin >> taskNumber;
+
+    if (taskNumber > 0 && taskNumber <= (int)tasks.size()) {
+        tasks.erase(tasks.begin() + taskNumber - 1);
+        cout << "🗑️ Task deleted successfully!\n";
+    } else {
+        cout << "Invalid task number.\n";
+    }
